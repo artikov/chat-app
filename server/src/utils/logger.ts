@@ -1,5 +1,5 @@
 import logger from "pino";
-import dayjs from "dayjs";
+// import dayjs from "dayjs";
 
 const log = logger({
   transport: {
@@ -8,21 +8,14 @@ const log = logger({
       colorize: true,
     },
   },
+  base: {
+    pid: false,
+  },
   // prettifier: true,
   // base: {
   //   pid: false,
   // },
   // timestamp: () => `,"time":"${dayjs().format()}`,
 });
-
-// const pino = require("pino");
-// const logger = pino({
-//   transport: {
-//     target: "pino-pretty",
-//     options: {
-//       colorize: true,
-//     },
-//   },
-// });
 
 export default log;
