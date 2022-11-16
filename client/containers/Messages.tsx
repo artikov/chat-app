@@ -1,5 +1,13 @@
+import { useSockets } from "../context/socket.context";
+
 function MessagesContainer() {
-  return <p>Messages</p>;
+  const { socket, messages, roomId, username } = useSockets();
+
+  if (!roomId) {
+    return <div />;
+  }
+
+  return <div></div>;
 }
 
 export default MessagesContainer;

@@ -23,7 +23,7 @@ function RoomsContainer() {
       </div>
 
       {Object.keys(rooms).map((key) => {
-        return <div key={key}>{key}</div>;
+        return <div key={key}>{rooms[key].name}</div>;
       })}
     </nav>
   );
