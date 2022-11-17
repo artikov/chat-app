@@ -27,7 +27,7 @@ function SocketsProvider(props: any) {
   const [username, setUsername] = useState("");
   const [roomId, setRoomId] = useState("");
   const [rooms, setRooms] = useState({});
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState<any>([]);
 
   useEffect(() => {
     window.onfocus = () => {
