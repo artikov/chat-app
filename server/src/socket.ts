@@ -24,6 +24,8 @@ function socket({ io }: { io: Server }) {
   io.on(EVENTS.connection, (socket: Socket) => {
     logger.info(`User connected ${socket.id}`);
 
+    socket.emit(EVENTS.SERVER.ROOMS, rooms);
+
     /*
      * When user creates a new room
      */

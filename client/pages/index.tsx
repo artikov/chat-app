@@ -25,7 +25,7 @@ export default function Home() {
   useEffect(() => {
     if (usernameRef)
       usernameRef.current.value = localStorage.getItem("username") || "";
-  });
+  }, []);
 
   return (
     <div>
@@ -33,7 +33,9 @@ export default function Home() {
         <div className={styles.usernameWrapper}>
           <div className={styles.usernameInner}>
             <input type="text" placeholder="Username" ref={usernameRef} />
-            <button onClick={handleSetUsername}>Start</button>
+            <button className="cta" onClick={handleSetUsername}>
+              Start
+            </button>
           </div>
         </div>
       )}

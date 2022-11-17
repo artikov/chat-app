@@ -1,6 +1,7 @@
 import { useRef } from "react";
 import EVENTS from "../config/events";
 import { useSockets } from "../context/socket.context";
+import styles from "../styles/Room.module.css";
 
 function RoomsContainer() {
   const { socket, roomId, rooms } = useSockets();
@@ -22,25 +23,28 @@ function RoomsContainer() {
   }
 
   return (
-    <nav>
-      <div>
+    <nav className={styles.wrapper}>
+      <div className={styles.createRoomWrapper}>
         <input ref={newRoomRef} type="text" placeholder="Room name" />
-        <button onClick={handleCreateRoom}>Create room</button>
+        <button className="cta" onClick={handleCreateRoom}>
+          Create room
+        </button>
       </div>
-
-      {Object.keys(rooms).map((key) => {
-        return (
-          <div key={key}>
-            <button
-              disabled={key === roomId}
-              title={`Join ${rooms[key].name}`}
-              onClick={() => handleJoinRoom(key)}
-            >
-              {rooms[key].name}
-            </button>
-          </div>
-        );
-      })}
+      <ul className={styles.roomList}>
+        {Object.keys(rooms).map((key) => {
+          return (
+            <div key={key}>
+              <button
+                disabled={key === roomId}
+                title={`Join ${rooms[key].name}`}
+                onClick={() => handleJoinRoom(key)}
+              >
+                {rooms[key].name}
+              </button>
+            </div>
+          );
+        })}
+      </ul>
     </nav>
   );
 }
