@@ -25,6 +25,8 @@ function MessagesContainer() {
         time: `${date.getHours()}:${date.getMinutes()}`,
       },
     ]);
+
+    newMessageRef.current.value = "";
   }
 
   if (!roomId) {
@@ -33,8 +35,8 @@ function MessagesContainer() {
 
   return (
     <div>
-      {messages?.map((message, index) => {
-        return <p key={index}>{JSON.stringify(message)}</p>;
+      {messages?.map(({ message }, index) => {
+        return <p key={index}>{message}</p>;
       })}
 
       <div>
