@@ -1,7 +1,7 @@
 import { useRef } from "react";
-import EVENTS from "../config/events";
-import { useSockets } from "../context/socket.context";
-import styles from "../styles/Room.module.css";
+import EVENTS from "../../config/events";
+import { useSockets } from "../../context/socket.context";
+import styles from "../../styles/Room.module.css";
 
 function RoomsContainer() {
   const { socket, roomId, rooms } = useSockets();

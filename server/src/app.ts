@@ -22,6 +22,13 @@ const io = new Server(httpServer, {
   },
 });
 
+app.use(
+  cors({
+    credentials: true,
+    origin: "http://localhost:3000",
+  })
+);
+
 app.get("/", (_, res) => res.send("server is running"));
 
 httpServer.listen(port, host, () => {

@@ -3,8 +3,8 @@ import Image from "next/image";
 import styles from "../styles/Home.module.css";
 import { useSockets } from "../context/socket.context";
 
-import RoomsContainer from "../containers/Rooms";
-import MessagesContainer from "../containers/Messages";
+import RoomsContainer from "../components/containers/Rooms";
+import MessagesContainer from "../components/containers/Messages";
 import { useEffect, useRef } from "react";
 
 export default function Home() {
